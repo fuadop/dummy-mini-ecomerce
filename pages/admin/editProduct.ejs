@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('../partials/head.ejs') %>
+  <body>
+    <%- include ('../partials/navbar.ejs') %>
+    <hr />
+    <% products.forEach(product =>{ %> 
+    <% if(productId == product.id){ %> 
+    <form action="/products/<%= product.id %> /edit" method="post">
+      <label for="productTitle"> Title</label>
+      <input type="text" name="productTitle" value="<%= product.title %>"> 
+      <label for="productPrice"> Price</label>
+      <input type="number" name="productPrice" value="<%= product.price %>"> 
+      <label for="productDescription"> Description</label>
+      <textarea name="productDescription" id="" cols="30" rows="30"><%= product.description %></textarea>
+        <input type="hidden" name="productId" value="<%=  product.id %> ">
+        <button type="submit">Save Changes</button>
+    </form>
+      <% } %>  
+    <% }) %> 
+    </div>
+  </body>
+</html>

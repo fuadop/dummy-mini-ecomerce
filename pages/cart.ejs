@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('partials/head.ejs') %>
+  <body>
+    <%- include ('partials/navbar.ejs') %>
+    <h1>CArt</h1>
+    <hr />
+    <% if(cart.length == 0){ %>
+    <h1>No Product</h1>
+    <% } %> <% cart.forEach(item => {%>
+    <h3><%= item.title %></h3>
+    <p><big class="money">N</big> <%= item.price %></p>
+    <form action="/products/<%= item.id %>/cart-delete " method="post">
+      <button type="submit">Remove</button>
+    </form>
+    <% }) %>
+    <br />
+    <h3>Total Price : <big class="money">N</big> <%= totalPrice %></h3>
+  </body>
+</html>

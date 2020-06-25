@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('partials/head.ejs') %>
+  <body>
+    <%- include ('partials/navbar.ejs') %>
+    <div class="grid">
+      <% if(products.length == 0 ){ %>
+      <h1>no products</h1>
+      <% }else{ products.forEach(product => {%>
+      <div>
+        <h1><%= product.title %></h1>
+        <h2><big class="money">N</big><%= product.price %></h2>
+        <p><%= product.description %></p>
+        <a href="/products/<%= product.id  %> ">Details</a>
+        <form action="/products/cart" method="post">
+          <input type="hidden" value="<%= product.id %> " name="productId" />
+          <button type="submit">Add to Cart</button>
+        </form>
+      </div>
+      <% }) %> <% };%>
+    </div>
+  </body>
+</html>

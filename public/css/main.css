@@ -1,0 +1,43 @@
+/*  general */
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* navbar */
+nav {
+  height: 8vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  background-color: thistle;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+nav ul li {
+  margin: 0 1rem;
+}
+nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.active {
+  color: red;
+}
+.money {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}

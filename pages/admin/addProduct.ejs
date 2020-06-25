@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('../partials/head.ejs') %>
+  <body>
+    <%- include ('../partials/navbar.ejs') %>
+    <form action="/admin/add-product" method="post">
+      <input type="text" name="title" placeholder="Title" required />
+      <input type="number" name="price" placeholder="Price" required />
+      <textarea name="description" cols="50" rows="30" required></textarea>
+      <button type="submit">add</button>
+    </form>
+  </body>
+</html>
